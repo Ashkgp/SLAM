@@ -42,6 +42,19 @@ public:
 		grid_vary += var.y;
 	}
 	void see_update(Point new_Point, Point var){
-			
+		grid_mean.x = (grid_mean.x + new_Point.x)/2;
+		grid_mean.y = (grid_mean.y + new_Point.y)/2;
+		grid_vary = 1/(1/grid_vary + 1/var.y);
+		grid_varx = 1/(1/grid_varx + 1/var.x);
 	}
+
+	Point get_prob(){
+		Point a;
+		a.x = grid_varx;
+		a.y = grid_vary;
+		return a;
+	}
+
 };
+
+#endif
