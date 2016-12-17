@@ -29,6 +29,7 @@ public:
 		grid_mean.x = null;
 		grid_mean.y = null;
 	}
+	
 	Bot(Point new_Point, Point var){
 		grid_varx = var.x;
 		grid_vary = var.y;
@@ -41,6 +42,7 @@ public:
 		grid_varx += var.x;
 		grid_vary += var.y;
 	}
+
 	void see_update(Point new_Point, Point var){
 		grid_mean.x = (grid_mean.x + new_Point.x)/2;
 		grid_mean.y = (grid_mean.y + new_Point.y)/2;
